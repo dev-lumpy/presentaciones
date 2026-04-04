@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/control/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/control/style_explicacion.css') }}"
+{% endblock %}
+
+{% block content %}
+<div class="theme_container"></div>
+<div class="topic_content" style="display: none;"></div>
+{% endblock %}
+
+{% block scripts %}
+<script 
+    type="module"
+    src="{{ url_for('static', filename='js/scripts_control/main.js') }}"
+    defer>
+</script>
+<script 
+    type="module"
+    src="{{ url_for('static', filename='js/scripts_control/api_backend.js') }}"
+    defer>
+</script>
+<script
+    type="module"
+    src="{{ url_for('static', filename='js/scripts_control/events_temas.js') }}"
+    defer>
+</script>
+<script 
+    type="module"
+    src="{{ url_for('static', filename='js/scripts_control/utils.js') }}"
+    defer>
+</script>
+{% endblock %}
+
+

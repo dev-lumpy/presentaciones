@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <html lang="en"> <head>
     <meta charset="UTF-8">
-    <title>{% block title %}My Flask App{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    <title>{% block title %}Presentacion{% endblock %}</title>
+    
+    <!-- Para los estilos de cada archivo html-->
+    {% block style %}{% endblock %}
+
+    </head>
 <body>
     {% block content %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- Para los scripts de cada archivo html -->
+    {% block scripts %}{% endblock %}
+
 </body>
 </html>
