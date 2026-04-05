@@ -7,7 +7,7 @@
 
 import { 
     request_resources, display_on_monitor, 
-    previous, next, add_animation
+    previous, next
 } from './api_backend.js';
 
 import { toggleVista } from './utils.js';
@@ -25,7 +25,7 @@ export function main(theme_container, topic_content) {
 
         // ── 2. Pedir recursos ANTES de construir el DOM ───────
         // Separarlo aquí deja claro que es async y que puede fallar.
-        const pasosAnimacion = await request_resources(titulo); 
+        const pasosAnimacion = await request_resources(id_tema); 
 
         // ── 2.1 Crear la caja de 'lista-animaciones' ──────────
         // Para poder controlarlo desde el exterior
@@ -67,14 +67,85 @@ function buildPanel(titulo, pasosAnimacion, listaBotones) {
     header.className = `header`;
     fragmento.appendChild(header);
 
-    // Poniendo funcionalidad a todos los botones que hay de
-    // 'list-animaciones'
+    // ============ ESTILOS PARA EL HEADER Y SUS BOTONES ============
+    // Estilos para el header
+    header.style.display = 'grid';
+    header.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    header.style.gap = '10px';
+    header.style.padding = '20px 15px';
+    header.style.backgroundColor = 'white';
+    header.style.borderBottom = '2px solid #ddd';
+    
+    // Estilos para el título h1
+    const h1 = header.querySelector('h1');
+    h1.style.gridColumn = 'span 2';
+    h1.style.margin = '0 0 10px 0';
+    h1.style.fontSize = '70px';
+    h1.style.textAlign = 'center';
+    h1.style.color = '#333';
+    
+    // Estilos para TODOS los botones del header
+    const botonesHeader = header.querySelectorAll('button');
+    botonesHeader.forEach(btn => {
+        btn.style.padding = '15px 10px';
+        btn.style.fontSize = '70px';
+        btn.style.fontWeight = 'bold';
+        btn.style.backgroundColor = '#007bff';
+        btn.style.color = 'white';
+        btn.style.border = 'none';
+        btn.style.borderRadius = '10px';
+        btn.style.cursor = 'pointer';
+        btn.style.transition = 'all 0.3s ease';
+    });
+    
+    // Estilos para el hr
+    const hr = header.querySelector('hr');
+    hr.style.gridColumn = 'span 2';
+    hr.style.margin = '10px 0 0 0';
+    hr.style.border = 'none';
+    hr.style.borderTop = '2px solid #ddd';
+    
+    fragmento.appendChild(header);
+
+    // ============ CREAR BOTONES GRANDES ============
     pasosAnimacion.forEach((paso) => {
         const btn = document.createElement('button');
-        btn.textContent   = paso.nombre;
-        btn.dataset.id    = paso.ID;    // solo guardamos el ID en el DOM
+        btn.textContent = paso.nombre;
+        btn.dataset.id = paso.ID;
+        
+        // 🔥 APLICAR ESTILOS DIRECTAMENTE (fuerza tamaños grandes)
+        btn.style.width = '100%';
+        btn.style.padding = '25px 15px';
+        btn.style.fontSize = '50px';
+        btn.style.fontWeight = 'bold';
+        btn.style.textAlign = 'center';
+        btn.style.backgroundColor = 'white';
+        btn.style.color = '#007bff';
+        btn.style.border = '3px solid #007bff';
+        btn.style.borderRadius = '15px';
+        btn.style.cursor = 'pointer';
+        btn.style.margin = '5px 0';
+        btn.style.transition = 'all 0.3s ease';
+        
+        // Efecto al tocar (para celular)
+        btn.addEventListener('touchstart', function() {
+            this.style.backgroundColor = '#007bff';
+            this.style.color = 'white';
+        });
+        btn.addEventListener('touchend', function() {
+            this.style.backgroundColor = 'white';
+            this.style.color = '#007bff';
+        });
+        
         listaBotones.appendChild(btn);
     });
+
+    // Estilo para el contenedor (1 columna)
+    listaBotones.style.display = 'flex';
+    listaBotones.style.flexDirection = 'column';
+    listaBotones.style.gap = '15px';
+    listaBotones.style.padding = '15px';
+    listaBotones.style.width = '100%';
 
     fragmento.appendChild(listaBotones);
     return fragmento;

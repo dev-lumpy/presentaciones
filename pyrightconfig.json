@@ -1,4 +1,18 @@
 {
-  "include": ["."],
-  "exclude": ["venv", "__pycache__"]
+  "include": ["app", "run.py"],
+  "exclude": ["**/node_modules", "**/__pycache__", ".venv"],
+  "venvPath": ".",
+  "venv": ".venv",
+  "typeCheckingMode": "basic",
+  "reportUnusedVariable": "none",
+  "reportUnusedImport": "none",
+  "reportMissingTypeStubs": false,
+  "reportAttributeAccessIssue": "none",
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["app"]
+    }
+  ]
 }
+

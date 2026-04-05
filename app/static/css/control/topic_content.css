@@ -1,0 +1,174 @@
+/* topic_content.css - Siempre 1 columna, botones grandes */
+
+.topic_content {
+    max-width: 800px;  /* Limitamos el ancho máximo */
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1 {
+    grid-column: span 2;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+    word-break: break-word;
+}
+
+.header button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.header button:hover {
+    background: #0056b3;
+    transform: scale(1.02);
+}
+
+.header hr {
+    grid-column: span 2;
+    margin: 5px 0;
+    border: none;
+    border-top: 2px solid #e0e0e0;
+}
+
+/* ============ LISTA DE BOTONES - SIEMPRE 1 COLUMNA ============ */
+.lista-animaciones {
+    display: flex;
+    flex-direction: column;  /* ← Siempre vertical, 1 columna */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Botones GRANDES y fáciles de tocar */
+.lista-animaciones button {
+    padding: 20px 15px;  /* ← Padding grande para botones altos */
+    font-size: 18px;     /* ← Texto más grande */
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 12px;  /* ← Bordes más redondeados */
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #333;
+    width: 100%;          /* ← Ocupa todo el ancho */
+}
+
+.lista-animaciones button:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Botón activo */
+.lista-animaciones button.active {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Para móviles pequeños, botones aún más grandes */
+@media (max-width: 768px) {
+    .lista-animaciones {
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .lista-animaciones button {
+        padding: 18px 15px;
+        font-size: 16px;
+    }
+    
+    .header button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lista-animaciones {
+        gap: 10px;
+        padding: 12px;
+    }
+    
+    .lista-animaciones button {
+        padding: 16px 12px;
+        font-size: 15px;
+    }
+    
+    .header {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .header button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animación de entrada */
+.lista-animaciones button {
+    animation: fadeInUp 0.3s ease backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Retrasos escalonados */
+.lista-animaciones button:nth-child(1) { animation-delay: 0.00s; }
+.lista-animaciones button:nth-child(2) { animation-delay: 0.02s; }
+.lista-animaciones button:nth-child(3) { animation-delay: 0.04s; }
+.lista-animaciones button:nth-child(4) { animation-delay: 0.06s; }
+.lista-animaciones button:nth-child(5) { animation-delay: 0.08s; }
+.lista-animaciones button:nth-child(6) { animation-delay: 0.10s; }
+.lista-animaciones button:nth-child(7) { animation-delay: 0.12s; }
+.lista-animaciones button:nth-child(8) { animation-delay: 0.14s; }
+.lista-animaciones button:nth-child(9) { animation-delay: 0.16s; }
+.lista-animaciones button:nth-child(10) { animation-delay: 0.18s; }
+.lista-animaciones button:nth-child(11) { animation-delay: 0.20s; }
+.lista-animaciones button:nth-child(12) { animation-delay: 0.22s; }
+.lista-animaciones button:nth-child(13) { animation-delay: 0.24s; }
+.lista-animaciones button:nth-child(14) { animation-delay: 0.26s; }
+.lista-animaciones button:nth-child(15) { animation-delay: 0.28s; }
+.lista-animaciones button:nth-child(16) { animation-delay: 0.30s; }
+

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recursos/style.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Aqui hiria todo el contenido del Recursos su HTML del monitor -->
+
+<!-- Checkbox -->
+<label class="checkbox">
+  <input type="checkbox" id="tema" checked>
+  Tema nuevo
+</label>
+
+<!-- FORM: crear tema -->
+<form class="form_create_tema" id="formCreate">
+
+  <label for="foto">Foto principal</label>
+  <input type="file" id="foto" accept="image/*">
+
+  <label for="titulo">Título del tema</label>
+  <input type="text" id="titulo" placeholder="Título del tema">
+
+  <button type="submit">SUBMIT</button>
+
+</form>
+
+<!-- FORM: agregar recurso -->
+<form class="form_addRecurso" id="formRecurso" style="display: none;">
+
+  <label for="temaSelect">Selecciona tema</label>
+
+  <!-- Esto es lo que buscabas 👇 -->
+  <select id="temaSelect">
+    <option value="1">Tema 1</option>
+    <option value="2">Tema 2</option>
+  </select>
+
+  <!-- Contenedor dinámico -->
+  <div class="container_recursos_of_tema"></div>
+
+  <button type="submit">Agregar recurso</button>
+
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script 
+    type="module"
+    src="{{ url_for('static', filename='js/scripts_recursos/main.js') }}"
+    defer>
+</script>
+{% endblock %}
+
+

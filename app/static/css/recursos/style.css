@@ -1,0 +1,29 @@
+/* Importar todos los CSS */
+@import url("checkbox.css");
+@import url("form-create.css");
+@import url("form-recurso.css");
+
+/* Layout general */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Zona izquierda (checkbox) */
+.sidebar {
+  border-right: 2px solid #ddd;
+  padding-right: 15px;
+}
+
+/* Zona derecha (formularios) */
+.content {
+  display: grid;
+  gap: 20px;
+}
