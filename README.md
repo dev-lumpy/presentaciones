@@ -60,13 +60,15 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Servidor por defecto:
+Configuración actual en el código (pensada para desarrollo):
 
 - Host: `0.0.0.0`
 - Puerto: `5000`
 - Debug: `True`
 
-> Para producción, configura `debug=False`.
+> ⚠️ Seguridad: no uses esta configuración en producción.  
+> Para uso local, puedes cambiar `host` a `127.0.0.1`.  
+> Para producción, configura `debug=False` y restringe exposición de red.
 
 Abrir en navegador:
 
