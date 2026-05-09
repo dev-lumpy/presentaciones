@@ -25,7 +25,7 @@ Actualmente el proyecto tiene 3 vistas principales:
 ```text
 presentaciones/
 ├── app/
-│   ├── db/main.py              # Gestor de base de datos (Tema + Imagenes)
+│   ├── db/main.py              # Gestor de base de datos (Tema + Imágenes)
 │   ├── routes/                 # Blueprints (control, monitor, recursos)
 │   ├── static/                 # CSS, JS e imágenes
 │   └── templates/              # control.html, monitor.html, recursos.html
@@ -104,7 +104,7 @@ Qué hace:
 
 - crea el tema en la tabla `Tema`
 - copia imágenes a `app/static/images`
-- registra cada imagen en la tabla `Imagenes` con su `orden`
+- registra cada imagen en la tabla de imágenes (`Imagenes`) con su `orden`
 
 ---
 
