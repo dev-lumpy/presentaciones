@@ -25,7 +25,7 @@ Actualmente el proyecto tiene 3 vistas principales:
 ```text
 presentaciones/
 ├── app/
-│   ├── db/main.py              # Gestor de base de datos (Tema + Imágenes)
+│   ├── db/main.py              # Gestor de base de datos (tema + imágenes)
 │   ├── routes/                 # Blueprints (control, monitor, recursos)
 │   ├── static/                 # CSS, JS e imágenes
 │   └── templates/              # control.html, monitor.html, recursos.html
@@ -49,11 +49,8 @@ source .venv/bin/activate
 2. Instalar dependencias:
 
 ```bash
-pip install -r requirements.txt
-pip install flask-socketio
+pip install -r requirements.txt flask-socketio
 ```
-
-> Nota: `flask-socketio` se usa en el código (`app/__init__.py`) y debe estar instalado.
 
 ---
 
@@ -129,4 +126,3 @@ Desde `recursos_route.py`:
 
 - El panel **control + monitor** está funcional para mostrar imágenes.
 - La sección **/recursos** tiene endpoints y UI base, pero faltan implementaciones reales de subida y orden persistente desde frontend.
-- `requirements.txt` no incluye todavía `flask-socketio`; por ahora se instala manualmente como se indica en la sección de instalación.
