@@ -49,7 +49,7 @@ source .venv/bin/activate
 2. Instalar dependencias:
 
 ```bash
-pip install -r requirements.txt flask-socketio
+pip install -r requirements.txt
 ```
 
 ---
@@ -65,6 +65,8 @@ Servidor por defecto:
 - Host: `0.0.0.0`
 - Puerto: `5000`
 - Debug: `True`
+
+> Para producción, configura `debug=False`.
 
 Abrir en navegador:
 
@@ -126,3 +128,11 @@ Desde `recursos_route.py`:
 
 - El panel **control + monitor** está funcional para mostrar imágenes.
 - La sección **/recursos** tiene endpoints y UI base, pero faltan implementaciones reales de subida y orden persistente desde frontend.
+
+## Resolución rápida de problemas
+
+Si aparece `ModuleNotFoundError: No module named 'flask_socketio'`, instala:
+
+```bash
+pip install flask-socketio
+```
