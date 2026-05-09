@@ -129,4 +129,4 @@ Desde `recursos_route.py`:
 
 - El panel **control + monitor** está funcional para mostrar imágenes.
 - La sección **/recursos** tiene endpoints y UI base, pero faltan implementaciones reales de subida y orden persistente desde frontend.
-- `requirements.txt` no incluye todavía `flask-socketio`.
+- `requirements.txt` no incluye todavía `flask-socketio`; por ahora se instala manualmente como se indica en la sección de instalación.
