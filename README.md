@@ -102,9 +102,9 @@ python importar_images.py "CircuitoN555" ./imagenes
 
 Qué hace:
 
-- crea el tema en la tabla `Tema`
-- copia imágenes a `app/static/images`
-- registra cada imagen en la tabla de imágenes (`Imagenes`) con su `orden`
+- crear el tema en la tabla `Tema`
+- copiar imágenes a `app/static/images`
+- registrar cada imagen en la tabla de imágenes (`Imagenes`) con su `orden`
 
 ---
 
